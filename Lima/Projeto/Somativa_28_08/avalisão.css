@@ -1,0 +1,58 @@
+header {
+  text-align: center;
+  background-color: rgb(25, 32, 136);
+  border: 1px solid rgb(3, 46, 128);
+}
+
+.formato {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: left;
+  background-color: rgb(240, 244, 247);
+  border: 1px solid rgb(210, 225, 235);
+}
+
+.inicio {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: left;
+  background-color: rgb(240, 244, 247);
+  border: 1px solid rgb(210, 225, 235);
+ 
+}
+
+.Meio {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: left;
+  background-color: rgb(240, 244, 247);
+  border: 1px solid rgb(210, 225, 235);
+}
+
+.final {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: center;
+  background-color: rgb(248, 249, 250);
+  border: 1px solid rgb(233, 236, 239);
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(236, 4, 217);
+}
+
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: left;
+}
+h5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: left;
+    background-color: rgb(240, 244, 247);
+    margin:5px;
+    padding: 10px;
+    width: 80px;
+}

@@ -1,0 +1,1 @@
+REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v IncognitoModeAvailability /f
