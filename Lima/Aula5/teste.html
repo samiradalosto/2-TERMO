@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Currículo</title>
+    
+    <!-- Importação de fonte moderna (Poppins) do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Cabeçalho */
+        header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #1a252f;
+            margin-bottom: 5px;
+        }
+
+        header .subtitulo {
+            font-size: 18px;
+            color: #2980b9;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contato {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contato a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        /* Seções */
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 20px;
+            color: #1a252f;
+            border-left: 4px solid #2980b9;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Lista de Experiências / Formação */
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item h3 {
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        .item .periodo {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Habilidades */
+        .habilidades-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .habilidades-lista li {
+            background-color: #eef2f5;
+            color: #2c3e50;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 26px;
+            }
+            .contato {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Cabeçalho com Informações Pessoais -->
+        <header>
+            <h1>Seu Nome Completo</h1>
+            <p class="subtitulo">Desenvolvedora Web Front-End</p>
+            
+            <div class="contato">
+                <span>📍 Limeira, SP</span>
+                <span>📞 (19) 99999-9999</span>
+                <span>✉️ <a href="mailto:seuemail@email.com">seuemail@email.com</a></span>
+                <span>🌐 <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com" target="_blank">GitHub</a></span>
+            </div>
+        </header>
+
+        <!-- Resumo Profissional -->
+        <section>
+            <h2>Resumo Profissional</h2>
+            <p>
+                Desenvolvedora em início de carreira com foco em HTML5, CSS3 e JavaScript. Apaixonada por criar interfaces modernas, acessíveis e responsivas. Buscando oportunidades para contribuir com projetos desafiadores e evoluir na área de tecnologia.
+            </p>
+        </section>
+
+        <!-- Experiência Profissional -->
+        <section>
+            <h2>Experiência Profissional</h2>
+            
+            <div class="item">
+                <h3>Desenvolvedora Front-End Freelancer | Projetos Pessoais</h3>
+                <p class="periodo">Jan de 2024 - Presente</p>
+                <p>
+                    • Criação e estilização de sites institucionais responsivos utilizando HTML5, CSS3 e JavaScript.<br>
+                    • Implementação de boas práticas de SEO e acessibilidade web.<br>
+                    • Otimização de layouts para dispositivos móveis.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Assistente de Tecnologia | Empresa Exemplo</h3>
+                <p class="periodo">Jan de 2023 - Dec de 2023</p>
+                <p>
+                    • Suporte na manutenção do site da empresa e atualização de conteúdos.<br>
+                    • Auxílio na solução de dúvidas técnicas dos usuários.
+                </p>
+            </div>
+        </section>
+
+        <!-- Formação Acadêmica -->
+        <section>
+            <h2>Formação Acadêmica</h2>
+            
+            <div class="item">
+                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                <p class="periodo">Nome da Faculdade / Universidade — Conclusão em 2025</p>
+            </div>
+        </section>
+
+        <!-- Cursos e Certificações -->
+        <section>
+            <h2>Cursos e Certificações</h2>
+            
+            <div class="item">
+                <h3>Desenvolvimento Web Completo (HTML, CSS, JS)</h3>
+                <p class="periodo">Curso Online — 60 horas</p>
+            </div>
+        </section>
+
+        <!-- Habilidades Técnicas -->
+        <section>
+            <h2>Habilidades Técnicas</h2>
+            <ul class="habilidades-lista">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Git & GitHub</li>
+                <li>VS Code</li>
+                <li>Design Responsivo</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>
