@@ -6,7 +6,7 @@ use Oficina_Samira_Dalosto;
 create table if not exists Clientes(
     id_clientes int auto_increment primary key,
     nome varchar(60) not null,
-    telefone char(15) not null,
+    telefone varchar(15) not null,
     email varchar(60) not null,
     CPF varchar(14) not null unique,
     data_nacimento date not NULL,
@@ -16,7 +16,7 @@ create table if not exists Clientes(
 create table if not exists veiculos(
     id_veiculos int auto_increment primary key,
     placa char(8) not null unique,
-    tipo_varchar Enum('Carro', 'Moto', 'Caminhão') DEfAULT ('Carro'),
+    tipo varchar(20) Enum('Carro', 'Moto', 'Caminhão') DEfAULT ('Carro'),
     cor VARCHAR(20),
     quilometragem FLOAT,
     tipo_motor enum ('Eletrico', 'Combustão', 'Híbrido') default ('Combustão'),
