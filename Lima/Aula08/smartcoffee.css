@@ -25,3 +25,8 @@ form{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
+card-cafe{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: dashed;
+    text-overflow: inherit;
+}
