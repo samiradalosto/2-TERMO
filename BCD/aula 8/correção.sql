@@ -98,3 +98,43 @@ INSERT INTO categoria (nome) VALUES
 
 DELETE from categoria
 WHERE nome = 'Excluir Depois';
+
+-- transações -segurança para dml
+start transaction;
+update produto set preco = preco * 2.80 
+where id_categoria = 1;
+
+-- desfaz o que fizemos errado ou volata uma transação
+Rollback;
+valida o procedimento de transação
+
+commit;
+
+start transaction;
+update cliente set cidade = 'limeira' where  id_cliente = 121;
+selecte *from cliente where id_cliente = 121;
+commit;
+rollback;
+
+-- procedimento de uma MASTER_COMPRESSION_ALGORITHMS
+-- passo 1:realizar cadastro cliente
+
+insert into cliente (nome, email, telefone, cidade, ativo) values ('Carlos silva',
+'carlos.silva@email.com', '11987654321', 'Limeira', TRUE);
+set @cliente_compra = last_insert_id();
+
+-- passo 2: realizar pedido
+
+insert into pedido (data_pedido, id_produtos, quantidade, preco_unitario)
+values (@pedido_compra, 4,1,13.00), (@pedido_compra, 9,1,9.00);
+
+-- passo 4 - aualizando total e status
+
+update pedido
+set valor_total = 22.00,
+    status= 'preparando'
+where id_pedido = @pedido_compra;
+
+-- passo 5 - registrar pagamento
+insert into pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento)
+values (@pedido_compra, 2, 22.00, '2023-10-01');
