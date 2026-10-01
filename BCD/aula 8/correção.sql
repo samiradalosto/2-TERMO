@@ -138,3 +138,20 @@ where id_pedido = @pedido_compra;
 -- passo 5 - registrar pagamento
 insert into pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento)
 values (@pedido_compra, 2, 22.00, '2023-10-01');
+
+-- passo 6 - conultar pedido e resultado
+
+select p.id_pedido,
+    c.nome AS cliente,
+    p.status AS Status_pedido,
+    p.valor_total
+from pedido p
+join cliente c ON c.id_cliente = p.id_cliente
+Where p.id_pedido = @pedido_compra;
+
+-- passo 7 - relatório
+-- passo 1
+select nome from where  id_cliente = @cliente_compra;
+
+-- passo 2
+select * from pedido where id_pedido = @pedido_compra;
