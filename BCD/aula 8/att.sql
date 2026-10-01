@@ -56,3 +56,12 @@ insert into produto(nome,preco,ativo,id_categoria)values
 ('Cupcake',8.00, true, 14),
 ('Mousse de chocolate', 25.00, true, 14),
 ('Fondue', 15.00, true, 14);
+
+-- continuação dos exercicios
+insert ADD into produto(nome,preco,ativo,id_categoria)values
+('Sorvete Fit',8.00, true, @categoria_especial);
+
+INSERT INTO cliente (nome,email,telefone,cidade)
+VALUES ('Nathalia Luz','nathalia2.a09@email.com',NULL,'Campinas');
+
+
