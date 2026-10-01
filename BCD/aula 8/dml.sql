@@ -168,5 +168,7 @@ SET ativo = FALSE
 WHERE id_cliente =10;
 
 SELECT * from cliente;
+SET @PEDIDO = LAST_INSERT_ID();
+SELECT @PEDIDO;
 
 
