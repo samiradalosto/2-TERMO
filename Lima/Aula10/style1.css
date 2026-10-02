@@ -1,0 +1,22 @@
+.equipe{
+    display: flex;
+    /* justify-content:center; */
+    /* justify-content: flex-end; */
+    /* justify-content: flex-start;foi para o canto esquerdo da pagiga */
+    /* justify-content: space-between; teve o espaçado entre eles */
+}
+
+.nibo{
+    align-items: flex-start;
+    align-items: center;
+    align-items: flex-end;
+}
+
+/* Ao aplicar o justify-content:flex-start não ocorreu uma mudança tão significativa */
+/*o texto foi para o centro da pagina entre os pontos ao texto da lista quando apliquei justify-content:center */
+/*Ao aplicar o justify-content:flex-end; não teve diferença*/
+
+.cards article {
+display: flex;
+gap: 20px;
+}
