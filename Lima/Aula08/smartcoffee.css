@@ -1,32 +1,51 @@
-body{
+.banner{
     background-color: aliceblue;
+    display: flex;
+    justify-content: flex-start;
 }
-header{
-    font-family: Arial, Helvetica, sans-serif;
+.lista1{
+    display:flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background-color: #f8f8f8;
+    padding: 48px 64px;
+    border-radius: 4px;
+    
 }
-nav a{
+.header{
+    font-family: Archivo Black, sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+}
+.nav a{
     font-family: 'Times New Roman','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: dashed;
     text-align:justify;
+    color: #926242;
 }
 
-img{
+.img{
     height: 300px;
     width: 200px;
     position: relative;
     top: 40px;
     left: 40px;
 }
-footer{
-    background-color:rgb(94, 14, 63) ;
+.footer{
+    background-color:rgb(94, 14, 63);
+
 }
-form{
+.form{
     text-decoration: dashed;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
-card-cafe{
+.card-cafe{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: dashed;
     text-overflow: inherit;
+
+}
+.sobre{
+
 }
