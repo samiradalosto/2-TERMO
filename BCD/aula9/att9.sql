@@ -22,7 +22,11 @@ select email as Email_cliente, telefone AS Contato_Cliente
 from cliente;
 
 -- Ex 3: Distinct cidade
+select DISTINCT cidade
 from cliente;
+
+select cidade
+from cliente; 
 
 -- sem distinct o resultado irá se repetir mais vezes.
 -- com o distinct o resultado irá aparecer uma vez
@@ -49,7 +53,7 @@ where valor_total >+ 25.00;
 -- Consulta pedidos acima de determinado valor
 
 -- Ex 5: uso do and, or e not
-and todas as condições verdadeiras
+-- and todas as condições verdadeiras
 select nome, preco 
 from produto
 where preco >= 8.00 and preco <= 25.00
@@ -64,7 +68,7 @@ select nome, cidade
 from cliente
 where not cidade = 'Limeira';
 
--- Extra - Ultilizando and e orjuntos separar por ()
+-- Extra - Ultilizando and e or juntos separar por ()
 select nome. cidade
 from cliente
 where ativo = true ativo
@@ -142,9 +146,10 @@ select nome, preco
 from produto
 order by preco DESC
 LIMIT 2;
--- Consultar apenas uma quantidade de limnhas
+-- Consultar apenas uma quantidade de linhas
 select nome, preco 
-from produtoorder by nome 
+from produto 
+order by nome 
 LIMIT 5 offset 5;
 
 select *from produto
@@ -179,3 +184,54 @@ From pedido;
 select nome, coalesce(telefone, 'Não contém o número') as telefone 
 from cliente;
 
+-- Ex 14: funções de agrupamento
+-- count - contar quantos registros existem
+-- sum - soma de valores
+-- Avg - média de valores
+-- Min - menor valor 
+-- Max - AMior valor
+
+select count(*) as Total_clientes
+from cliente;
+ontar quantos clientes existem
+
+select avg(preco) as Média_preço
+from produto;
+-- Calcular média de preços dos produtos
+
+select min(preco) AS menor_preço, AVG(preco) as Média_preço
+from produto;
+-- Resumo de preços
+
+select sum(valor_total) AS faturamento_mensal
+from pedido
+where status = 'Finalizado';
+-- total de vendas ou pedidos realizados com critério
+
+-- Ex 15: GROUP by - Agrupar dados
+select cidade, count(*) as Qauntidade_clientes
+From clientes
+group by cidade;
+
+select id_categoria, count(*) as Quantidade_produtos
+from produto
+group by id_categoria;
+
+-- Ex 16: HAVING - filtro por grupos 
+-- where - filtra linhas antes do group
+-- HAVING - filtra linhas depois do group by
+
+select cidade, COUNT(*) as qtde_clientes
+from cliente
+group by cidade 
+HAVING COUNT(*) >= 2;
+-- cidades com pelos menos dois clientes
+
+-- Ex 17: Ordem de criação de uma conxulta completa
+select colunas 
+from tabela 
+where condicao 
+GROUP BY colunas_agrupar
+HAVING condicao_agrupar 
+ORDER BY colunas
+LIMIT quantidade;
