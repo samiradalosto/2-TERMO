@@ -87,13 +87,14 @@ INSERT INTO categoria (nome) VALUES
 ('Combo');
 
 INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES
-('Café Coado', 4.50, TRUE, 1),
-('Chocolate Quente', 8.50, TRUE, 2),
-('Suco de Laranja', 7.50, TRUE, 3),
-('Suco de morango', 6.50, TRUE, 3),
-('Brigadeiro', 4.00, TRUE, 2),
-('Coxinha de frango', 8.50, TRUE, 4),
+('Café Coado', 4.50, TRUE, 1);
+('Chocolate Quente', 8.50, TRUE, 2);
+('Suco de Laranja', 7.50, TRUE, 3);
+('Suco de morango', 6.50, TRUE, 3);
+('Brigadeiro', 4.00, TRUE, 2);
+('Coxinha de frango', 8.50, TRUE, 4);
 ('Pão de Queijo', 5.00, TRUE, 5);
+('Doce de leite', 4.00 true,4);
 
 INSERT INTO pedido (data_pedido, status, valor_total, id_cliente) VALUES
 (NOW(), 'aberto', 0.00, 1),
