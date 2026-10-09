@@ -1,51 +1,365 @@
-.banner{
-    background-color: aliceblue;
-    display: flex;
-    justify-content: flex-start;
-}
-.lista1{
-    display:flex;
-    justify-content: space-between;
-    font-weight: bold;
-    background-color: #f8f8f8;
-    padding: 48px 64px;
-    border-radius: 4px;
-    
-}
-.header{
-    font-family: Archivo Black, sans-serif;
-    font-weight: 400;
-    font-style: normal; 
-}
-.nav a{
-    font-family: 'Times New Roman','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: dashed;
-    text-align:justify;
-    color: #926242;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.img{
-    height: 300px;
-    width: 200px;
-    position: relative;
-    top: 40px;
-    left: 40px;
+:root {
+  --cor-fundo-escuro: #71422e;  
+  --cor-fundo-bege: #f7eee3;
+  --cor-fundo-branco: #ffffff;  
+  --cor-destaque: #d9731e;      
+  --cor-texto: #333333;
+  --cor-subtexto: #ffffff;
 }
-.footer{
-    background-color:rgb(94, 14, 63);
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo-branco);
+  line-height: 1.6;
 }
-.form{
-    text-decoration: dashed;
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /*[cite: 7] */
+}
+
+/* ==========================================
+   2. CABEÇALHO / NAVEGAÇÃO
+   ========================================== */
+header[class*="Inicio"], 
+body > header {
+  background-color: var(--cor-fundo-escuro); /*[cite: 8] */
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > a {
+  color: var(--cor-fundo-branco);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.lista1 {
+  display: flex;
+  list-style: none; /*[cite: 2] */
+  gap: 24px;
+}
+
+.lista1 a {
+  color: var(--cor-fundo-bege);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.lista1 a:hover {
+  color: var(--cor-destaque);
+}
+
+/* ==========================================
+   3. SECÇÃO BANNER (HERO)
+   ========================================== */
+.banner {
+  background-color: var(--cor-fundo-bege); /*[cite: 8] */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.banner-conteudo {
+  max-width: 500px;
+}
+
+.banner-conteudo p:first-child {
+  color: var(--cor-destaque);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.banner-conteudo h1 {
+  font-size: 2.5rem;
+  margin: 12px 0;
+  color: var(--cor-fundo-escuro);
+}
+
+.banner-imagem img {
+  width: 450px;
+  height: 300px; /*[cite: 7] */
+  border-radius: 12px;
+}
+
+/* ==========================================
+   4. SECÇÃO SOBRE NÓS
+   ========================================== */
+.sobre {
+  background-color: var(--cor-fundo-branco); /*[cite: 8] */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.sobre-imagem img {
+  width: 450px;
+  height: 300px; /*[cite: 7] */
+  border-radius: 12px;
+}
+
+.sobre-cabecalho p {
+  color: var(--cor-destaque);
+  font-weight: bold;
+}
+
+.sobre-cabecalho h2 {
+  font-size: 2rem;
+  color: var(--cor-fundo-escuro);
+  margin-bottom: 16px;
+}
+
+.sobre a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: var(--cor-destaque); /*[cite: 8] */
+  color: var(--cor-fundo-branco);
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* ==========================================
+   5. SECÇÃO CAFÉS / PRODUTOS (CARDS)
+   ========================================== */
+.cafes {
+  background-color: var(--cor-fundo-bege); /*[cite: 8] */
+  padding: 60px 40px;
+}
+
+.secao-cabecalho, 
+.cafes > header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.secao-cabecalho p, 
+.cafes > header p {
+  color: var(--cor-destaque);
+  font-weight: bold;
+}
+
+.secao-cabecalho h2, 
+.cafes > header h2 {
+  font-size: 2rem;
+  color: var(--cor-fundo-escuro);
+}
+
+.lista-cafes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /*[cite: 2, 4] */
+  gap: 24px; /*[cite: 5] */
+  list-style: none; /*[cite: 2] */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card-cafe {
+  background-color: var(--cor-fundo-branco); /*[cite: 8] */
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-cafe img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.card-cafe h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--cor-fundo-escuro);
+}
+
+.card-cafe p {
+  color: var(--cor-subtexto);
+  font-size: 0.9rem;
+  padding: 0 16px;
+  margin-bottom: 12px;
+}
+
+.card-cafe strong {
+  color: var(--cor-destaque);
+  font-size: 1.2rem;
+}
+
+/* ==========================================
+   6. SECÇÃO AMBIENTE
+   ========================================== */
+.ambiente {
+  background-color: var(--cor-fundo-escuro); /*[cite: 8] */
+  color: var(--cor-fundo-branco);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.ambiente-conteudo {
+  max-width: 450px;
+}
+
+.ambiente-conteudo p:first-child {
+  color: var(--cor-destaque);
+  font-weight: bold;
+}
+
+.ambiente-conteudo h2 {
+  font-size: 2rem;
+  margin: 12px 0;
+}
+
+.ambiente-conteudo a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: var(--cor-destaque); /*[cite: 8] */
+  color: var(--cor-fundo-branco);
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.ambiente-imagem img {
+  width: 450px;
+  height: 300px; /*[cite: 7] */
+  border-radius: 12px;
+}
+
+/* ==========================================
+   7. SECÇÃO CONTATO (FORMULÁRIO)
+   ========================================== */
+.contato {
+  background-color: var(--cor-fundo-branco); /*[cite: 8] */
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinhado à direita conforme o wireframe */[cite: 8]
+}
+
+.contato-cabeçalho, 
+.contato > header {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 20px;
+}
+
+.contato form {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contato label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contato input, 
+.contato textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.contato textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contato button {
+  background-color: var(--cor-destaque); /*[cite: 8] */
+  color: var(--cor-fundo-branco);
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================
+   8. RODAPÉ (FOOTER)
+   ========================================== */
+footer {
+  background-color: var(--cor-fundo-escuro); /*[cite: 8] */
+  color: var(--cor-fundo-bege);
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+footer nav ul {
+  display: flex;
+  list-style: none; /*[cite: 2] */
+  gap: 20px;
+}
+
+footer nav a {
+  color: var(--cor-fundo-bege);
+  text-decoration: none;
+}
+
+footer nav a:hover {
+  color: var(--cor-destaque);
+}
+
+/* ==========================================
+   9. RESPONSIVIDADE (TELEMÓVEL / CELULAR)
+   ========================================== */
+@media (max-width: 768px) {
+  header[class*="Inicio"], 
+  body > header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .banner, 
+  .sobre, 
+  .ambiente {
+    flex-direction: column; /*[cite: 1] */
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-}
-.card-cafe{
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: dashed;
-    text-overflow: inherit;
+  }
 
-}
-.sobre{
+  .contato {
+    align-items: center;
+  }
 
+  .banner-imagem img, 
+  .sobre-imagem img, 
+  .ambiente-imagem img {
+    width: 100%;
+    height: auto;
+  }
 }
