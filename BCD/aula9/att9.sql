@@ -305,9 +305,10 @@ group by C.id_cliente, C.nome
 ORDER BY total_comprado DESC;
 
 -- Ex 6 Relat`rio completo do pedido
-select p.id_pedido, Date_forma(p.Data_pedido, '%d %m %y %h:%i') as data,c.nome as cliente, pr.nome as produto, ip.qunatidade * Preco_unitario as subtotal from pedido as p 
-inner join cliente as CALLon c.id_cliente as c
+select p.id_pedido, DATE_FORMAT(p.Data_pedido, '%d %m %y %h:%i') as data,c.nome as cliente, pr.nome as produto, ip.qunatidade * Preco_unitario as subtotal from pedido as p 
+inner join cliente as  c.id_cliente as c
 on c.id_cliente = p.id_cliente
 inner join produto as pr
 on pr.id_produto = ip.id_produto
 order by p.id_pedido, pr.nome;
+
