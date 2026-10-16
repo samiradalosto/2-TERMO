@@ -1,0 +1,119 @@
+/* Variáveis em CSS */
+:root{
+    /* paleta de Cores */
+    --espresso:  #2b170d;                                     
+    --cafe:  #5A321B;
+    --texto: #351302;
+    --branco:  #ffffff;
+}
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    /* Movimentação visual do scrol do html  */
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: var(--cafe);
+    line-height: 1.6;
+    background-color: var(--cafe);
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3{
+    margin-top:0;
+    color:var(--espresso);
+}
+
+h1{
+    font-size:  3rem;
+    line-height: 1.1;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1.25rem;
+}
+.menu{
+    display: flex;
+    gap:43px;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--texto);
+    color: var(--texto1)
+}
+.menu a {
+    color:var(--espresso);
+    text-decoration: nobe;
+    font-weight: 500;
+}
+
+.menu a:hover{
+    color: var(--brancoo);
+}
+
+.menu a:focus-visible{
+    outline: 3px solid var(--cafe);
+    outline-offset: 10px;
+}
+.menu-id{
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: var(--espresso);
+    color: var(--branco);
+    text-decoration:none;
+    font-weight: 600;
+    border-radius: 16px;
+}
+
+.menu-id{
+    background-color: var(--cafe);
+}
+
+.menu-id{
+    transition: background-color 0.5s ease;
+}
+
+.lista-imgs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(223px, 1fr));
+    gap: 23px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imagens{
+    height: 100%;
+    padding: 20px;
+    background-color: var(--branco);
+    border: 3px solid var(--cafe);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0.2s ease;
+}
+.imagens:hover{
+    transform: translatey(-4px);
+    box-shadow: 0 12px 38px rgda(43, 23, 13, 0.12);
+}
+
+.imagens img{
+    width: 100%;
+    aspect-ratio:4 / 3;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(43, 23, 13, 0.08);
+
+}
