@@ -5,9 +5,23 @@
     --cafe:  #5A321B;
     --texto: #351302;
     --branco:  #ffffff;
+/* Paleta de Cores */
+    --espaco-xs: 4px;
+    --espaco-sm: 8px;
+    --espaco-md: 16px;
+    --espaco-lg: 32px;
+    --espaco-xl: 64px;
+    --espaco-xxl: 128px;
+    /* fontes  */
+    --fonte-principal: "Roboto", Arial, sans-serif;
+    --fonte-secudaria: "Open Sans";
+
+    /* :root representa o elemento raiz do documento */
 }
+
 *{
     box-sizing: border-box;
+    /* aplicação na pagina inteira  */
 }
 html{
     scroll-behavior: smooth;
