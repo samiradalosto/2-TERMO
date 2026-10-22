@@ -141,7 +141,7 @@ UPDATE produto
 SET preco = preco * 1.05
 WHERE id_categoria = 1;
 
---Ex 5: Ajustes d eatualizações condicionais 
+--Ex 5: Ajustes e atualizações condicionais 
 UPDATE produto
 SET preco = CASE 
     WHEN preco <=20  THEN preco * 1.20  
