@@ -74,7 +74,7 @@ WHERE ano_publicacao >= 2020;
 INSERT INTO usuario (nome, email, telefone, ativo) VALUES ('Teste Exclusao', 'teste@email.com', '19900000000', TRUE);
 
 -- Exclusão bem-sucedida (Usuário sem empréstimo)
-DELETE FROM usuario WHERE email = 'teste@email.com';
+DELETE FROM usuario WHERE email = 'olivia@email.com';
 
 -- Tentativa não vai dar certo por que à restrição de chave estrangeira (FK)
 -- DELETE FROM usuario WHERE id_usuario = 1; 
@@ -174,6 +174,7 @@ UPDATE livro SET quantidade_disponivel = quantidade_disponivel + 5 WHERE id_livr
 ROLLBACK TO SAVEPOINT bs_primeira_alteracao;
 COMMIT;
 
+-- 24 TRANSAÇÃO DE DEVOLUÇÃO
 START TRANSACTION;
 UPDATE emprestimo 
 SET status_emprestimo = 'DEVOLVIDO', data_devolucao = CURDATE() 
