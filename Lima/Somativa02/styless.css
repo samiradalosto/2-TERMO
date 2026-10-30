@@ -276,6 +276,7 @@ footer {
 
 footer p {
     margin: 0;
+    display: center;
 }
 
 body > span {
