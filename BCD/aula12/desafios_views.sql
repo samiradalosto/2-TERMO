@@ -63,17 +63,6 @@ inner join produto as pr
 ON pr.id_produto = ip.id_produto;
 
 -- 6. Crie vw_pedidos_clientes .
-CREATE View vw_itens_pedidos as 
-select pe.id_pedido. pe.data_pedido, c.nome as Cliente, pr.nome as produto, ip.quantidade, ip.preco_unitario, ip.quantidade * ip.preco_unitaro as subtotal
-from pedido as pe
-inner join cliente as c
-on c.id_cliente = pe.id_cliente
-inner join item_pedido as ip
-on ip.id_pedido = pe.id_pedido
-inner join produto as pr
-ON pr.id_produto = ip.id_produto;
-
--- 7. Consulte somente pedidos FINALIZADOS pela view.
 create View  vw_vendas_pro_produto as
 select pr.id_produto, pr.nome as produto, sum(ip.quantidade) As unidades_vendidas, sum(ip.quantidade *ip.preco_unitario) as faturamento
 from produto as pr
@@ -82,6 +71,9 @@ on ip.produto = pr.ip.id_produto
 inner join pedido as pe
 on pe.status = 'aberto'
 group by pr.id_produto, pr.nome;
+
+-- 7. Consulte somente pedidos FINALIZADOS pela view.
+select * from vw_
 -- 8. Crie uma view com pedido, produto, quantidade, preço unitário e
 -- subtotal.
 create view vw_cliente_resumo as 
