@@ -105,14 +105,62 @@ img {
     list-style: none;
 }
 
-@media (max-width: 400px) {
-    .conteudo-img {
-        grid-template-columns: repeat(auto-fit, minmax(220px));
-    }
-}
 
 .imagem-img{
     display: flex; 
     object-fit: cover;
     object-position: right;
+}
+
+cartoes{
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25, box-shadow 0.25;
+}
+
+.cartoes:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 22px 34px -14px  rgba(0,0,0,0,0.4);
+}
+
+.cartoes-corpo{
+    overflow: hidden;
+}
+
+.cartoes-corpo img{
+    transition: transform 0.45;
+}
+
+.cartoes-corpo img:hover{
+    transform: scale(1.5);
+}
+
+.cartoes-img:hover .cartoes-corpo img{
+    transform: scale(1.2);
+}
+
+.imadem-final{
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.imagem-final figcaption{
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px;
+    color: white;
+    background-color: #e20c53f1;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.imagem-final:hover figcaption{
+    transition: translateY(0);
+}
+
+@media (max-width: 400px) {
+    .conteudo-img {
+        grid-template-columns: repeat(auto-fit, minmax(220px));
+    }
 }
