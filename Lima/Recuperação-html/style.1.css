@@ -1,0 +1,85 @@
+body{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(137, 211, 245);
+}
+
+.Titulo{
+    display: flex;
+    color: #2266e6;  
+    border: 1px solid  rgb(137, 211, 245);
+    width: 100%; 
+    align-items: center; 
+    color: black;
+    padding: 0 20px; 
+    background-color: #02005a;
+    justify-items: center;
+}
+
+.botao:hover {
+  background: #4F46E5;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.descricao{
+    display: flex;
+    color: #2266e6;  
+    margin: 20;
+    padding: 30;
+    border: 1px solid  rgb(137, 211, 245);
+    width: 100%; 
+    align-items: center; 
+    color: black;
+    padding: 0 20px; 
+    background-color: #02005a;
+    justify-items: center;
+
+}
+.blocos{
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    color: #2266e6;  
+    margin: 20;
+    padding: 30;
+    border: 8px solid  rgb(0, 5, 7);
+    align-items: center; 
+    color: black;
+    padding: 0 20px; 
+
+}
+img{
+    width: 50%;
+    display: block;
+}
+
+.final{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.rodapé{
+    border: 1px solid  rgb(0, 0, 0);
+    align-items: center; 
+    color: black;
+    padding: 0 20px; 
+}
+
+body{
+    margin:0;
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.65;
+}
+
+.h2{
+    justify-content: center;
+    display: flex;
+    
+}
+h4{
+  width: 143px;
+  height: 83px;
+
+}
