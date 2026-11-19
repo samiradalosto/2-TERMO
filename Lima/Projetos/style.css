@@ -1,0 +1,26 @@
+/* Fundo degradê do painel principal */
+.painel-industrial {
+    background: linear-gradient(135deg, #06365e 0%, #0863ad 100%);
+    border-radius: 16px;
+}
+
+/* Cartões translúcidos de cada área */
+.card-area {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+/* Botões internos de cada área */
+.btn-area {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efeito ao passar o rato (hover) no botão */
+.btn-area:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
