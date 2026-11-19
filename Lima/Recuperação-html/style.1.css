@@ -83,3 +83,8 @@ h4{
   height: 83px;
 
 }
+
+nav li+ li{
+    color:aliceblue;
+    margin: 2 10px;
+}
