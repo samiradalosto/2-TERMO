@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <title>Cartões e NavBar</title>
+</head>
+<body>
+    <h1>Modelo de barra de navegação 1</h1>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <section class="container">
+            <a href="#" class="navbar-brand">Monstros SA</a>
+
+            <section class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link" href="#">Personagens</a>
+                <a class="nav-link" href="#">Trailers</a>
+            </section>
+        </section>
+    </nav>
+
+    <h1>Modelo de barra de navegação 2</h1>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <section class="container">
+            <a class="navbar=brand" href="#">Universidade Monstros</a>
+
+            <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            arial-label="Abrir navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <section class="collapse navbar-collapse" id="menuPrincipal">
+            <section class="navbar-nav ms-auto">
+                <a class="nav-link active" aria-current="page" href="">Inicio</a>
+                <a class="nav-link" href="">Inicio</a>
+                <a class="nav-link" href="">Inicio</a>
+            </section>
+        </section>
+        </section>
+    </nav>
+
+    <h1>Cartão 1</h1>
+    <article class="card h-100">
+        <section class="card-body">
+            <h2 class="card-title h5">Sully</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero facere officia nam facilis perspiciatis ea obcaecati commodi eligendi est, eos tempora repellat, iusto dicta atque deserunt maiores consectetur inventore amet!</p>
+            <a href="#" class="btn btn-primary">Perfil</a>
+        </section>
+    </article>
+
+    <h1>Cartão 2</h1>
+    <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <article class="col">
+            <section class="card h-100">
+                <section class="card-body">
+                    <h2>Wazowski</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum assumenda mollitia at voluptatem reprehenderit tempore saepe perferendis provident! In magnam veritatis laboriosam dolore eius eos quos consectetur esse voluptas suscipit.</p>
+                </section>
+            </section>
+        </article>
+    </section>
+
+    <h3>Cartão 3</h3>
+    <section class="card rounded-2" style="width: 18rem;">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/e/ef/Sulley.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" class="card-img-top" alt="Imagem Sully">
+        <article class="card-body">
+            <h5 class="card-title">Sulley</h5>
+            <p class="card-text">Sulley....</p>
+            <a href="#" class="btn btn-primary">Ver Perfil</a>
+        </article>
+    </section>
+
+    <h4>Cartão 4</h4>
+    <section class="card rounded-2" style="width: 18rem;">
+        <img src="https://static.wikia.nocookie.net/pixar/images/3/38/Mike1.png/revision/latest?cb=20191001002722&path-prefix=pt" class="card-img=top" alt="Imagem Sully">
+        <article class="card-body">
+            <h5 class="card-title">Wazowski</h5>
+            <p class="card-text">Wazowski....</p>
+            <a href="#" class="btn btn-danger">Ver Perfil</a>
+        </article>
+    </section>
+
+    <section class="card-group">
+    <article class="card">
+        <img src="" class="card-img-top" alt="Boo">
+        <section class="card-body">
+            <h5 class="card-title">Boo</h5>
+            <p class="card-text">Boo...</p>
+        </section>
+        <aside class="card-footer">
+            <small class="text-body-secondary">Atualizado agora</small>
+        </aside>
+    </article>
+</section>
+
+<section class="card border-primary bg-dark text-white mb-3" style="max-width: 18rem;">
+  <article class="card-header">Randall</article>
+  <aside class="card-body text-primary">
+    <h5 class="card-title">Randall</h5>
+    <p class="card-text">Randall</p>
+  </aside>
+</section>
+
+<section class="card text-bg-dark">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi5Emz9xdxWAH-4N1fTgXIufsgNHYpLg8gJQNVBbqwTg&s=10" alt="Randall">
+  <article class="card-img-overlay">
+    <h5 class="card-title">Randall</h5>
+    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, neque expedita iusto inventore unde perferendis vitae temporibus voluptas soluta eveniet. Quis sunt totam, temporibus possimus inventore praesentium nesciunt! Minus, inventore?</p>
+    <p class="card-text"><small>Atualizado agora</small></p>
+  </article>
+</section>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+</body>
+</html>
