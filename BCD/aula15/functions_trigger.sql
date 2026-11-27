@@ -161,6 +161,63 @@ delimiter;
 
 select calcular_desconto_produtos(200.00, 1200) as valor_desconto;
 
---------------------------------------------------------
+----------//-----------------//-------------
 
 -- 4. 
+DELIMITER $$
+
+CREATE FUNCTION SITUACAO_ESTOQUE(P_QUANTIDADE INT)
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+    IF P_QUANTIDADE = 0 THEN
+        RETURN 'SEM ESTOQUE';
+    ELSEIF P_QUANTIDADE <= 10 THEN
+        RETURN 'ESTOQUE BAIXO';
+    ELSE
+        RETURN 'ESTOQUE NORMAL';
+    END IF;
+END $$
+
+DELIMITER ;
+
+SELECT ID_PRODUTO, SITUACAO_ESTOQUE(QUANTIDADE) AS SITUÇÃO_ESTOQUE FROM ESTOQUE;
+
+-- Exemplo keynan
+select id_produto, situacao_estoque(quantidade) as situação_estoque from estoque;
+
+-- Exemplo gabriel 
+
+select e.id_produto, p.nome as produto, E.quantidade, situacao_estoque(E.quantidade) as status_estoque from estoque as e 
+inner join produto as p
+on E.id_produto = p.id_produto
+order by id_produto;
+
+-- Triggers
+-- trigger é uma rotina associda a uma tabela que é execultada automaticamente quando 
+-- ocorre um insert, update, delete
+-- Aplicaçôes no dia-dia
+-- auditoria: regitrar preco antigo e novo  sempre que um produto muda 
+-- segurança: registrar exclusões importantes
+-- estoque: impedir quantidade negativa
+-- hospital: registrar alterações em dados criticos 
+-- finaceira: criar histórico de mudança de status de pagamento
+
+create table auditoria_preco(
+    id_auditoria int auto_increment,
+    id_produto int not null,
+    preco_anterior decimal(10,2),
+    preco_novo decimal(10,2),
+    alterado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    constraint pk_id_auditoria PRIMARY key (id_auditoria),
+    constraint fk_produto FOREIGN key (id_roduto) references produto
+    (id_produto)
+);
+
+DELIMITER $$
+
+create trigger trg_produto_preco_update
+after update on produtofor each ROW
+BEGIN
+    if old.d.preco <> new.preco THEN
+        insert into  
