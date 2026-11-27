@@ -219,5 +219,57 @@ DELIMITER $$
 create trigger trg_produto_preco_update
 after update on produtofor each ROW
 BEGIN
-    if old.d.preco <> new.preco THEN
-        insert into  
+    INSERT INTO AUDITORIA_PRECO (ID_PRODUTO, PRECO_ANTERIOR, PRECO_NOVO)
+        VALUES (NEW.ID_PRODUTO, OLD.PRECO, NEW.PRECO);
+    END IF;
+END $$
+DELIMITER;
+
+select id_produto, nome, preco from produto
+where id_produto -1;
+
+update produto
+set preco = 10.50
+where id_produto = 1;
+
+select * from auditoria_preco
+order by id_auditoria desc;
+
+-- OBS: boa prática - sempre mostre o estado antes (before), execute a mudança e depois consulte o estado depois (after)
+-- Before antes de gravar validar estoque negativo 
+-- after depois de gravar registrar histórico/auditoria
+-- insert (old não) (new sim)
+-- update (old sim) (new sim)
+-- delete (old sim) (new não)
+
+--  Ex 2- validação automática com signal
+
+DELIMITER $$
+
+create trigger trg_estoque_before_update
+before update on estoque 
+for each row 
+begin
+    if new.quantidade < 0 THEN
+        signal sqlstate '45000'
+        set message_text = 'estpque não pode ficar negativo';
+    end if;
+end $$
+
+DELIMITER;
+-- Ex 3: before insert - antes de inserir dados
+
+DELIMITER
+create trigger trg_produto_before_insert
+before insert on id_produto
+for each ROW
+begin
+    if new.preco <= 0 THEN
+        signal sqlstate '45000'
+        set message_text = 'preço deve ser maior que zero';
+        end if;
+end $$
+
+select * from  produto;
+
+insert into produto (id_categoria, nome, preco, ativo) valuess (1, 'café americano', -2.00, true);
