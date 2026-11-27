@@ -259,7 +259,7 @@ end $$
 DELIMITER;
 -- Ex 3: before insert - antes de inserir dados
 
-DELIMITER
+DELIMITER $$
 create trigger trg_produto_before_insert
 before insert on id_produto
 for each ROW
@@ -269,7 +269,40 @@ begin
         set message_text = 'preço deve ser maior que zero';
         end if;
 end $$
+DELIMITER ;
 
 select * from  produto;
 
-insert into produto (id_categoria, nome, preco, ativo) valuess (1, 'café americano', -2.00, true);
+-- insert into produto (id_categoria, nome, preco, ativo) valuess (1, 'café americano', -2.00, true);
+
+-- Ex 4: exclusão de registro - afer delete
+
+create table log_exclusao_produto (
+    id_log int AUTO_INCREMENT,
+    id_produto int,
+    nome_produto VARCHAR(120),
+    excluido_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT PK_ID_LOG PRIMARY KEY (id_log),
+    CONSTRAINT FK_PRODUTO_ID FOREIGN KEY (ID_PRODUTO) REFERENCES PRODUTO (ID_PRODUTO)
+);
+
+delimiter $$
+
+create trigger trg_produto_after_delete
+after delete on produto
+for each ROW
+begin
+    insert into log_exlusao_produto(id_produto, nome_produto)
+    values (old.id_produto, old.nome);
+end$$
+DELIMITER;
+
+-- testando
+
+insert into log_exclusão_produto(id_prduto, nome_produto) values (1, 'teste');
+
+selct * from log_exclusao_produto;
+
+DELETE from log_exclusao_produto
+WHERE 
+
