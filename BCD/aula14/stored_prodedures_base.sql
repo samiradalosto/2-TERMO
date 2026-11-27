@@ -1,7 +1,7 @@
--- Active: 1794486345815@@127.0.0.1@3308@biblioteca_senai_samira
-DROP DATABASE IF EXISTS smartcoffee_samira;
-CREATE DATABASE smartcoffee_procedures_samira;
-USE smartcoffee_procedures_samira;
+-- Active: 1794917647857@@127.0.0.1@3306@smartcoffee_procedures_bruno
+DROP DATABASE IF EXISTS smartcoffee_procedures_bruno;
+CREATE DATABASE smartcoffee_procedures_bruno;
+USE smartcoffee_procedures_bruno;
 
 CREATE TABLE cliente (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
